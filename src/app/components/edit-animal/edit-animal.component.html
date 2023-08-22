@@ -1,0 +1,24 @@
+<div *ngIf="animal" class="animal-cell">
+    <div class="animal-cell-text">
+        <div class="animal-cell-text-row">
+            <div class="animal-cell-text-label">Name:</div> 
+            <input [(ngModel)]="animal.name" placeholder="Name" />
+        </div>
+        <div class="animal-cell-text-row">
+            <div class="animal-cell-text-label">Speicies:</div> 
+            <input [(ngModel)]="animal.species" placeholder="Species" />
+        </div>
+        <div class="animal-cell-text-row">
+            <div class="animal-cell-text-label">Scientific:</div> 
+            <input [(ngModel)]="animal.scientificName" placeholder="Scientific Name" />
+        </div>
+        <div class="animal-cell-text-row">
+            <div class="animal-cell-text-label">Image:</div> 
+            <input [(ngModel)]="animal.imageUrl" placeholder="Paste URL for Image" />
+        </div>
+    </div>
+
+    <div (click)="crateAnimal(animal)" class="animal-cell-tools-button">
+        Create
+    </div>
+</div>

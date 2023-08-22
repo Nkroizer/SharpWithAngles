@@ -1,0 +1,44 @@
+<div *ngIf="animal" class="animal-cell">
+    <img class="animal-cell-image" *ngIf="animal.imageUrl && animal.imageUrl != ''" src="{{animal.imageUrl}}" alt="animal.name"/>
+    <div class="animal-cell-text" *ngIf="!animalToEdit || animalToEdit.id != animal.id">
+        <div class="animal-cell-text-row">
+            <div class="animal-cell-text-label">Name:</div> 
+            <div>{{animal.name}}</div>
+        </div>
+        <div class="animal-cell-text-row">
+            <div class="animal-cell-text-label">Speicies:</div> 
+            <div>{{animal.species}}</div>
+        </div>
+        <div class="animal-cell-text-row">
+            <div class="animal-cell-text-label">Scientific:</div> 
+            <div>{{animal.scientificName}}</div>
+        </div>
+    </div>
+    <div class="animal-cell-text" *ngIf="animalToEdit && animalToEdit.id == animal.id">
+        <div class="animal-cell-text-row">
+            <div class="animal-cell-text-label">Name:</div> 
+            <input [(ngModel)]="animal.name" placeholder="Name" />
+        </div>
+        <div class="animal-cell-text-row">
+            <div class="animal-cell-text-label">Speicies:</div> 
+            <input [(ngModel)]="animal.species" placeholder="Species" />
+        </div>
+        <div class="animal-cell-text-row">
+            <div class="animal-cell-text-label">Scientific:</div> 
+            <input [(ngModel)]="animal.scientificName" placeholder="Scientific Name" />
+        </div>
+        <div class="animal-cell-text-row">
+            <div class="animal-cell-text-label">Image:</div> 
+            <input [(ngModel)]="animal.imageUrl" placeholder="Paste URL for Image" />
+        </div>
+    </div>
+    <div class="animal-cell-tools">
+        <div (click)="editAnimalEvent(animal)" class="animal-cell-tools-button">
+            <mat-icon>edit</mat-icon>
+        </div>
+        <div (click)="deleteAnimal(animal)" class="animal-cell-tools-button">
+            <mat-icon>delete</mat-icon>
+        </div>
+    </div>
+</div>
+
