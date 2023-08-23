@@ -19,6 +19,8 @@ export class EditAnimalComponent implements OnInit {
   crateAnimal(animal: Animal) {
     this.animalService
     .createAnimal(animal)
-    .subscribe((animals : Animal[]) => this.animalsUpdated.emit(animals));
+    .subscribe((animals : Animal[]) => {
+      this.animalsUpdated.emit(animals)
+    });
   }
 }

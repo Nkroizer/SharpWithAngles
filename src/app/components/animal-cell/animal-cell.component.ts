@@ -23,4 +23,13 @@ export class AnimalCellComponent {
       .deleteAnimal(animal)
       .subscribe((animals : Animal[]) => this.animalsUpdated.emit(animals));
   }
+
+  upDateAnimal(animal: Animal) {
+    this.animalService
+    .updateAnimal(animal)
+    .subscribe((animals : Animal[]) => {
+      this.animalsUpdated.emit(animals);
+      this.animalToEdit = undefined;
+    });
+  }
 }

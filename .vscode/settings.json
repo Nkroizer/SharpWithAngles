@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/8f9ced08-ad61-48e9-8b0b-9f61666e55a1/resourceGroups/SharpWithAngles_group/providers/Microsoft.Web/sites/SharpWithAngles",
+    "appService.deploySubpath": "."
+}

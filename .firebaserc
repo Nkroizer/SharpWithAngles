@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "sharpwithangles"
+  },
+  "targets": {
+    "sharpwithangles": {
+      "hosting": {
+        "SharpWithAngles": [
+          "sharpwithangles"
+        ]
+      }
+    }
+  }
+}

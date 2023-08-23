@@ -1,3 +1,3 @@
 export const enviroment = {
-    apiUrl: "https://localhost:7174/api"
+    apiUrl: "https://sharpwithanglesapiapi.azure-api.net/api"
 };

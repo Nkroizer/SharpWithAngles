@@ -32,12 +32,17 @@
             <input [(ngModel)]="animal.imageUrl" placeholder="Paste URL for Image" />
         </div>
     </div>
-    <div class="animal-cell-tools">
+    <div class="animal-cell-tools" *ngIf="!animalToEdit">
         <div (click)="editAnimalEvent(animal)" class="animal-cell-tools-button">
             <mat-icon>edit</mat-icon>
         </div>
         <div (click)="deleteAnimal(animal)" class="animal-cell-tools-button">
             <mat-icon>delete</mat-icon>
+        </div>
+    </div>
+    <div class="animal-cell-tools" *ngIf="animalToEdit">
+        <div (click)="upDateAnimal(animal)" class="animal-cell-tools-button">
+            Save
         </div>
     </div>
 </div>

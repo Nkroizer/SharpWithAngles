@@ -17,7 +17,9 @@ export class AppComponent {
   ngOnInit() : void {
     this.animalService
       .getAnimal()
-      .subscribe((result : Animal[]) => (this.animals = result));
+      .subscribe((result : Animal[]) => {
+        this.animals = result
+      });
   }
 
   updateAnimalList(animals: Animal[]) {
