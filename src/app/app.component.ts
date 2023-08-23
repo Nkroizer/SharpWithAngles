@@ -11,6 +11,7 @@ export class AppComponent {
   title = 'SharpWithAngles';
   animals: Animal[] = [];
   animalToEdit?: Animal;
+  edit = false;
 
   constructor(private animalService: AnimalService) {}
 
@@ -33,5 +34,13 @@ export class AppComponent {
 
   editAnimal(animal: Animal) {
     this.animalToEdit = animal;
+  }
+
+  goToView() {
+    this.edit = false;
+  }
+
+  goToedit() {
+    this.edit = true;
   }
 }

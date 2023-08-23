@@ -10,13 +10,9 @@ import { AnimalService } from 'src/app/services/animal.service';
 })
 export class AnimalCellComponent {
   @Input() animal? : Animal;
+  @Input() edit? : any;
   @Output() animalsUpdated = new EventEmitter<Animal[]>();
-  animalToEdit?: Animal;
   constructor(private animalService: AnimalService ) {}
-
-  editAnimalEvent(animal: Animal) {
-    this.animalToEdit = animal;
-  }
 
   deleteAnimal(animal: Animal) {
     this.animalService
@@ -29,7 +25,6 @@ export class AnimalCellComponent {
     .updateAnimal(animal)
     .subscribe((animals : Animal[]) => {
       this.animalsUpdated.emit(animals);
-      this.animalToEdit = undefined;
     });
   }
 }

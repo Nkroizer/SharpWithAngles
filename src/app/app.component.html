@@ -1,10 +1,14 @@
+<div class="navigation-header">
+  <div (click)="goToView()" class="navigation-header-button" [ngClass]="{'active': !edit}">View</div>
+  <div (click)="goToedit()" class="navigation-header-button" [ngClass]="{'active': edit}">Edit</div>
+</div>
 <div *ngFor="let singleAnimal of animals">
-  <app-animal-cell [animal]="singleAnimal" (animalsUpdated)="updateAnimalList($event)"/>
+  <app-animal-cell [animal]="singleAnimal" (animalsUpdated)="updateAnimalList($event)" [edit]="edit"/>
 </div>
 
-<app-edit-animal [animal]="animalToEdit" (animalsUpdated)="updateAnimalList($event)"></app-edit-animal>
+<app-edit-animal *ngIf="edit" [animal]="animalToEdit" (animalsUpdated)="updateAnimalList($event)"></app-edit-animal>
 
-<div (click)="initNewAnimal()" class="create-new-animal-button-wrapper" *ngIf="!animalToEdit">
+<div (click)="initNewAnimal()" class="create-new-animal-button-wrapper" *ngIf="edit && !animalToEdit">
   <div class="create-new-animal-button">
     Create New Animal
   </div>
